@@ -9,31 +9,24 @@ class DailyLogRepository {
 
   DailyLogRepository(this._boxCollection);
 
-  Future<void> createDailyLog(final DailyLog dailyLog) async {
-    final CollectionBox<Map> box = await _getBox();
+  Future<DailyLog> saveDailyLog(final DailyLog dailyLog) async {
+    final CollectionBox<DailyLog> box = await _getBox();
     final String key = _getDailyLogKey();
-    final Map<String, Object?> json = dailyLog.toJson();
-    box.put(key, json);
+    await box.put(key, dailyLog);
+    return dailyLog;
   }
 
   Future<DailyLog?> getDailyLog() async {
-    final CollectionBox<Map> box = await _getBox();
-    final Map<dynamic, dynamic>? json = await box.get(_getDailyLogKey());
+    final CollectionBox<DailyLog> box = await _getBox();
+    return await box.get(_getDailyLogKey());
+  }
 
-    if (json == null) {
-      return null;
-    }
-
-    final Map<String, dynamic> resolvedJson = json as Map<String, dynamic>;
-    return DailyLog.fromJson(resolvedJson);
+  Future<CollectionBox<DailyLog>> _getBox() async {
+    return await _boxCollection.openBox<DailyLog>(dailyLogBoxName);
   }
 
   String _getDailyLogKey() {
     final DateTime now = DateTime.now();
     return "${now.day}/${now.month}/${now.year}";
-  }
-
-  Future<CollectionBox<Map>> _getBox() async {
-    return await _boxCollection.openBox<Map>(dailyLogBoxName);
   }
 }

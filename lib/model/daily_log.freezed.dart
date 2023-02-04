@@ -20,10 +20,16 @@ DailyLog _$DailyLogFromJson(Map<String, dynamic> json) {
 
 /// @nodoc
 mixin _$DailyLog {
+  @HiveField(0)
   List<Question> get questions => throw _privateConstructorUsedError;
+  @HiveField(1)
   Question get selectedQuestion => throw _privateConstructorUsedError;
+  @HiveField(2)
   QuestionStatus get questionStatus => throw _privateConstructorUsedError;
+  @HiveField(3)
   DateTime get createdDate => throw _privateConstructorUsedError;
+  @HiveField(4)
+  int get availableQuestionSwaps => throw _privateConstructorUsedError;
 
   Map<String, dynamic> toJson() => throw _privateConstructorUsedError;
   @JsonKey(ignore: true)
@@ -37,10 +43,11 @@ abstract class $DailyLogCopyWith<$Res> {
       _$DailyLogCopyWithImpl<$Res, DailyLog>;
   @useResult
   $Res call(
-      {List<Question> questions,
-      Question selectedQuestion,
-      QuestionStatus questionStatus,
-      DateTime createdDate});
+      {@HiveField(0) List<Question> questions,
+      @HiveField(1) Question selectedQuestion,
+      @HiveField(2) QuestionStatus questionStatus,
+      @HiveField(3) DateTime createdDate,
+      @HiveField(4) int availableQuestionSwaps});
 
   $QuestionCopyWith<$Res> get selectedQuestion;
 }
@@ -62,6 +69,7 @@ class _$DailyLogCopyWithImpl<$Res, $Val extends DailyLog>
     Object? selectedQuestion = null,
     Object? questionStatus = null,
     Object? createdDate = null,
+    Object? availableQuestionSwaps = null,
   }) {
     return _then(_value.copyWith(
       questions: null == questions
@@ -80,6 +88,10 @@ class _$DailyLogCopyWithImpl<$Res, $Val extends DailyLog>
           ? _value.createdDate
           : createdDate // ignore: cast_nullable_to_non_nullable
               as DateTime,
+      availableQuestionSwaps: null == availableQuestionSwaps
+          ? _value.availableQuestionSwaps
+          : availableQuestionSwaps // ignore: cast_nullable_to_non_nullable
+              as int,
     ) as $Val);
   }
 
@@ -100,10 +112,11 @@ abstract class _$$_DailyLogCopyWith<$Res> implements $DailyLogCopyWith<$Res> {
   @override
   @useResult
   $Res call(
-      {List<Question> questions,
-      Question selectedQuestion,
-      QuestionStatus questionStatus,
-      DateTime createdDate});
+      {@HiveField(0) List<Question> questions,
+      @HiveField(1) Question selectedQuestion,
+      @HiveField(2) QuestionStatus questionStatus,
+      @HiveField(3) DateTime createdDate,
+      @HiveField(4) int availableQuestionSwaps});
 
   @override
   $QuestionCopyWith<$Res> get selectedQuestion;
@@ -124,6 +137,7 @@ class __$$_DailyLogCopyWithImpl<$Res>
     Object? selectedQuestion = null,
     Object? questionStatus = null,
     Object? createdDate = null,
+    Object? availableQuestionSwaps = null,
   }) {
     return _then(_$_DailyLog(
       questions: null == questions
@@ -142,25 +156,33 @@ class __$$_DailyLogCopyWithImpl<$Res>
           ? _value.createdDate
           : createdDate // ignore: cast_nullable_to_non_nullable
               as DateTime,
+      availableQuestionSwaps: null == availableQuestionSwaps
+          ? _value.availableQuestionSwaps
+          : availableQuestionSwaps // ignore: cast_nullable_to_non_nullable
+              as int,
     ));
   }
 }
 
 /// @nodoc
 @JsonSerializable()
-class _$_DailyLog implements _DailyLog {
+@HiveType(typeId: 1, adapterName: "DailyLogAdapter")
+class _$_DailyLog extends _DailyLog {
   _$_DailyLog(
-      {required final List<Question> questions,
-      required this.selectedQuestion,
-      required this.questionStatus,
-      required this.createdDate})
-      : _questions = questions;
+      {@HiveField(0) required final List<Question> questions,
+      @HiveField(1) required this.selectedQuestion,
+      @HiveField(2) required this.questionStatus,
+      @HiveField(3) required this.createdDate,
+      @HiveField(4) required this.availableQuestionSwaps})
+      : _questions = questions,
+        super._();
 
   factory _$_DailyLog.fromJson(Map<String, dynamic> json) =>
       _$$_DailyLogFromJson(json);
 
   final List<Question> _questions;
   @override
+  @HiveField(0)
   List<Question> get questions {
     if (_questions is EqualUnmodifiableListView) return _questions;
     // ignore: implicit_dynamic_type
@@ -168,15 +190,21 @@ class _$_DailyLog implements _DailyLog {
   }
 
   @override
+  @HiveField(1)
   final Question selectedQuestion;
   @override
+  @HiveField(2)
   final QuestionStatus questionStatus;
   @override
+  @HiveField(3)
   final DateTime createdDate;
+  @override
+  @HiveField(4)
+  final int availableQuestionSwaps;
 
   @override
   String toString() {
-    return 'DailyLog(questions: $questions, selectedQuestion: $selectedQuestion, questionStatus: $questionStatus, createdDate: $createdDate)';
+    return 'DailyLog(questions: $questions, selectedQuestion: $selectedQuestion, questionStatus: $questionStatus, createdDate: $createdDate, availableQuestionSwaps: $availableQuestionSwaps)';
   }
 
   @override
@@ -191,7 +219,9 @@ class _$_DailyLog implements _DailyLog {
             (identical(other.questionStatus, questionStatus) ||
                 other.questionStatus == questionStatus) &&
             (identical(other.createdDate, createdDate) ||
-                other.createdDate == createdDate));
+                other.createdDate == createdDate) &&
+            (identical(other.availableQuestionSwaps, availableQuestionSwaps) ||
+                other.availableQuestionSwaps == availableQuestionSwaps));
   }
 
   @JsonKey(ignore: true)
@@ -201,7 +231,8 @@ class _$_DailyLog implements _DailyLog {
       const DeepCollectionEquality().hash(_questions),
       selectedQuestion,
       questionStatus,
-      createdDate);
+      createdDate,
+      availableQuestionSwaps);
 
   @JsonKey(ignore: true)
   @override
@@ -217,23 +248,32 @@ class _$_DailyLog implements _DailyLog {
   }
 }
 
-abstract class _DailyLog implements DailyLog {
+abstract class _DailyLog extends DailyLog {
   factory _DailyLog(
-      {required final List<Question> questions,
-      required final Question selectedQuestion,
-      required final QuestionStatus questionStatus,
-      required final DateTime createdDate}) = _$_DailyLog;
+      {@HiveField(0) required final List<Question> questions,
+      @HiveField(1) required final Question selectedQuestion,
+      @HiveField(2) required final QuestionStatus questionStatus,
+      @HiveField(3) required final DateTime createdDate,
+      @HiveField(4) required final int availableQuestionSwaps}) = _$_DailyLog;
+  _DailyLog._() : super._();
 
   factory _DailyLog.fromJson(Map<String, dynamic> json) = _$_DailyLog.fromJson;
 
   @override
+  @HiveField(0)
   List<Question> get questions;
   @override
+  @HiveField(1)
   Question get selectedQuestion;
   @override
+  @HiveField(2)
   QuestionStatus get questionStatus;
   @override
+  @HiveField(3)
   DateTime get createdDate;
+  @override
+  @HiveField(4)
+  int get availableQuestionSwaps;
   @override
   @JsonKey(ignore: true)
   _$$_DailyLogCopyWith<_$_DailyLog> get copyWith =>

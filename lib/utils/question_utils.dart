@@ -8,15 +8,17 @@ class QuestionUtils {
   static List<String> getTags(Question question) {
     List<String> tags = question.tags
         .map((tag) => tag.replaceAll("_", " "))
-        .map((tag) => tag.split(" "))
-        .map((tagWords) => tagWords.map((tagWord) => tagWord.capitalize!).join(" "))
         .toList();
     tags.add(getDifficultyText(question.difficulty));
     tags.add(question.category);
     if (question.isNiche) {
       tags.add(niche);
     }
-    return tags.toSet().toList();
+
+    return tags.map((tag) => tag.split(" "))
+        .map((tagWords) => tagWords.map((tagWord) => tagWord.capitalize!).join(" "))
+        .toSet()
+        .toList();
   }
 
   static String getDifficultyText(String? difficulty) {

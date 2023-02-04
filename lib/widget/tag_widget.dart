@@ -15,7 +15,7 @@ class TagWidget extends StatelessWidget {
         border: Border.all(
           style: BorderStyle.solid,
           color: ColorUtils.getRandomColor(),
-          width: 3
+          width: 3,
         ),
         borderRadius: BorderRadius.circular(50),
       ),
@@ -24,7 +24,7 @@ class TagWidget extends StatelessWidget {
           value,
           style: const TextStyle(
             fontWeight: FontWeight.bold,
-            fontSize: 16
+            fontSize: 16,
           ),
         ),
       ),

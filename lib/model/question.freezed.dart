@@ -20,15 +20,25 @@ Question _$QuestionFromJson(Map<String, dynamic> json) {
 
 /// @nodoc
 mixin _$Question {
+  @HiveField(0)
   String get category => throw _privateConstructorUsedError;
+  @HiveField(1)
   String get id => throw _privateConstructorUsedError;
+  @HiveField(2)
   String get correctAnswer => throw _privateConstructorUsedError;
+  @HiveField(3)
   List<String> get incorrectAnswers => throw _privateConstructorUsedError;
+  @HiveField(4)
   String get question => throw _privateConstructorUsedError;
+  @HiveField(5)
   List<String> get tags => throw _privateConstructorUsedError;
+  @HiveField(6)
   String get type => throw _privateConstructorUsedError;
+  @HiveField(7)
   String? get difficulty => throw _privateConstructorUsedError;
+  @HiveField(8)
   List<String> get regions => throw _privateConstructorUsedError;
+  @HiveField(9)
   bool get isNiche => throw _privateConstructorUsedError;
 
   Map<String, dynamic> toJson() => throw _privateConstructorUsedError;
@@ -43,16 +53,16 @@ abstract class $QuestionCopyWith<$Res> {
       _$QuestionCopyWithImpl<$Res, Question>;
   @useResult
   $Res call(
-      {String category,
-      String id,
-      String correctAnswer,
-      List<String> incorrectAnswers,
-      String question,
-      List<String> tags,
-      String type,
-      String? difficulty,
-      List<String> regions,
-      bool isNiche});
+      {@HiveField(0) String category,
+      @HiveField(1) String id,
+      @HiveField(2) String correctAnswer,
+      @HiveField(3) List<String> incorrectAnswers,
+      @HiveField(4) String question,
+      @HiveField(5) List<String> tags,
+      @HiveField(6) String type,
+      @HiveField(7) String? difficulty,
+      @HiveField(8) List<String> regions,
+      @HiveField(9) bool isNiche});
 }
 
 /// @nodoc
@@ -132,16 +142,16 @@ abstract class _$$_QuestionCopyWith<$Res> implements $QuestionCopyWith<$Res> {
   @override
   @useResult
   $Res call(
-      {String category,
-      String id,
-      String correctAnswer,
-      List<String> incorrectAnswers,
-      String question,
-      List<String> tags,
-      String type,
-      String? difficulty,
-      List<String> regions,
-      bool isNiche});
+      {@HiveField(0) String category,
+      @HiveField(1) String id,
+      @HiveField(2) String correctAnswer,
+      @HiveField(3) List<String> incorrectAnswers,
+      @HiveField(4) String question,
+      @HiveField(5) List<String> tags,
+      @HiveField(6) String type,
+      @HiveField(7) String? difficulty,
+      @HiveField(8) List<String> regions,
+      @HiveField(9) bool isNiche});
 }
 
 /// @nodoc
@@ -213,33 +223,39 @@ class __$$_QuestionCopyWithImpl<$Res>
 
 /// @nodoc
 @JsonSerializable()
-class _$_Question implements _Question {
-  const _$_Question(
-      {required this.category,
-      required this.id,
-      required this.correctAnswer,
-      required final List<String> incorrectAnswers,
-      required this.question,
-      required final List<String> tags,
-      required this.type,
-      required this.difficulty,
-      required final List<String> regions,
-      required this.isNiche})
+@HiveType(typeId: 0, adapterName: "QuestionAdapter")
+class _$_Question extends _Question {
+  _$_Question(
+      {@HiveField(0) required this.category,
+      @HiveField(1) required this.id,
+      @HiveField(2) required this.correctAnswer,
+      @HiveField(3) required final List<String> incorrectAnswers,
+      @HiveField(4) required this.question,
+      @HiveField(5) required final List<String> tags,
+      @HiveField(6) required this.type,
+      @HiveField(7) required this.difficulty,
+      @HiveField(8) required final List<String> regions,
+      @HiveField(9) required this.isNiche})
       : _incorrectAnswers = incorrectAnswers,
         _tags = tags,
-        _regions = regions;
+        _regions = regions,
+        super._();
 
   factory _$_Question.fromJson(Map<String, dynamic> json) =>
       _$$_QuestionFromJson(json);
 
   @override
+  @HiveField(0)
   final String category;
   @override
+  @HiveField(1)
   final String id;
   @override
+  @HiveField(2)
   final String correctAnswer;
   final List<String> _incorrectAnswers;
   @override
+  @HiveField(3)
   List<String> get incorrectAnswers {
     if (_incorrectAnswers is EqualUnmodifiableListView)
       return _incorrectAnswers;
@@ -248,9 +264,11 @@ class _$_Question implements _Question {
   }
 
   @override
+  @HiveField(4)
   final String question;
   final List<String> _tags;
   @override
+  @HiveField(5)
   List<String> get tags {
     if (_tags is EqualUnmodifiableListView) return _tags;
     // ignore: implicit_dynamic_type
@@ -258,11 +276,14 @@ class _$_Question implements _Question {
   }
 
   @override
+  @HiveField(6)
   final String type;
   @override
+  @HiveField(7)
   final String? difficulty;
   final List<String> _regions;
   @override
+  @HiveField(8)
   List<String> get regions {
     if (_regions is EqualUnmodifiableListView) return _regions;
     // ignore: implicit_dynamic_type
@@ -270,6 +291,7 @@ class _$_Question implements _Question {
   }
 
   @override
+  @HiveField(9)
   final bool isNiche;
 
   @override
@@ -328,40 +350,51 @@ class _$_Question implements _Question {
   }
 }
 
-abstract class _Question implements Question {
-  const factory _Question(
-      {required final String category,
-      required final String id,
-      required final String correctAnswer,
-      required final List<String> incorrectAnswers,
-      required final String question,
-      required final List<String> tags,
-      required final String type,
-      required final String? difficulty,
-      required final List<String> regions,
-      required final bool isNiche}) = _$_Question;
+abstract class _Question extends Question {
+  factory _Question(
+      {@HiveField(0) required final String category,
+      @HiveField(1) required final String id,
+      @HiveField(2) required final String correctAnswer,
+      @HiveField(3) required final List<String> incorrectAnswers,
+      @HiveField(4) required final String question,
+      @HiveField(5) required final List<String> tags,
+      @HiveField(6) required final String type,
+      @HiveField(7) required final String? difficulty,
+      @HiveField(8) required final List<String> regions,
+      @HiveField(9) required final bool isNiche}) = _$_Question;
+  _Question._() : super._();
 
   factory _Question.fromJson(Map<String, dynamic> json) = _$_Question.fromJson;
 
   @override
+  @HiveField(0)
   String get category;
   @override
+  @HiveField(1)
   String get id;
   @override
+  @HiveField(2)
   String get correctAnswer;
   @override
+  @HiveField(3)
   List<String> get incorrectAnswers;
   @override
+  @HiveField(4)
   String get question;
   @override
+  @HiveField(5)
   List<String> get tags;
   @override
+  @HiveField(6)
   String get type;
   @override
+  @HiveField(7)
   String? get difficulty;
   @override
+  @HiveField(8)
   List<String> get regions;
   @override
+  @HiveField(9)
   bool get isNiche;
   @override
   @JsonKey(ignore: true)

@@ -8,12 +8,19 @@ class QuizBloc extends Bloc<QuizEvent, QuizState> {
   final QuizService _quizService;
 
   QuizBloc(this._quizService) : super(InitialQuizState()) {
-    on<GetDailyLogEvent>(_getDailyLogEvent);
+    on<GetDailyLogEvent>(_getDailyLog);
+    on<SwapQuestionEvent>(_swapQuestion);
   }
 
-  void _getDailyLogEvent(QuizEvent event, Emitter<QuizState> emit) async {
+  void _getDailyLog(GetDailyLogEvent event, Emitter<QuizState> emit) async {
     emit(LoadingQuizState());
-    DailyLog dailyLog = await _quizService.getDailyLog();
+    final DailyLog dailyLog = await _quizService.getDailyLog();
+    emit(LoadedQuizState(dailyLog: dailyLog));
+  }
+
+  void _swapQuestion(SwapQuestionEvent event, Emitter<QuizState> emit) async {
+    emit(LoadingQuizState());
+    final DailyLog dailyLog = await _quizService.swapQuestion();
     emit(LoadedQuizState(dailyLog: dailyLog));
   }
 }

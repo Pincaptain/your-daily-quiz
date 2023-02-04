@@ -8,3 +8,5 @@ abstract class QuizEvent extends Equatable {
 }
 
 class GetDailyLogEvent extends QuizEvent {}
+
+class SwapQuestionEvent extends QuizEvent {}

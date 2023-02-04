@@ -21,4 +21,8 @@ class QuizService {
     final List<Question> questions = await _questionService.getQuestions();
     return await _dailyLogService.createDailyLog(questions);
   }
+
+  Future<DailyLog> swapQuestion() async {
+    return _dailyLogService.swapQuestion();
+  }
 }
