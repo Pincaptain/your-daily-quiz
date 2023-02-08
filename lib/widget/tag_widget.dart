@@ -1,5 +1,5 @@
-import 'package:flutter/material.dart';
-import 'package:your_daily_quiz/utils/color_utils.dart';
+import "package:flutter/material.dart";
+import "package:your_daily_quiz/utils/color_utils.dart";
 
 class TagWidget extends StatelessWidget {
   final String value;

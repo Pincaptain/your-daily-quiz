@@ -1,11 +1,11 @@
-import 'dart:math';
+import "dart:math";
 
-import 'package:injectable/injectable.dart';
-import 'package:your_daily_quiz/enums/question_status.dart';
-import 'package:your_daily_quiz/exception/illegal_state_exception.dart';
-import 'package:your_daily_quiz/model/daily_log.dart';
-import 'package:your_daily_quiz/model/question.dart';
-import 'package:your_daily_quiz/repository/daily_log_repository.dart';
+import "package:injectable/injectable.dart";
+import "package:your_daily_quiz/enums/question_status.dart";
+import "package:your_daily_quiz/exception/illegal_state_exception.dart";
+import "package:your_daily_quiz/model/daily_log.dart";
+import "package:your_daily_quiz/model/question.dart";
+import "package:your_daily_quiz/repository/daily_log_repository.dart";
 
 @injectable
 class DailyLogService {
@@ -20,9 +20,9 @@ class DailyLogService {
       questions: questions,
       selectedQuestion: questions.first,
       questionStatus: QuestionStatus.unanswered,
-      createdDate: DateTime.now(),
       availableQuestionSwaps: defaultAvailableQuestionSwaps,
     );
+
     return await _dailyLogRepository.saveDailyLog(newDailyLog);
   }
 
@@ -42,12 +42,11 @@ class DailyLogService {
         .toList();
     final Random random = Random();
     final Question selectedQuestion = filteredQuestions[random.nextInt(filteredQuestions.length)];
-    final availableQuestionSwaps = dailyLog.availableQuestionSwaps - 1;
+    final int availableQuestionSwaps = dailyLog.availableQuestionSwaps - 1;
     final DailyLog newDailyLog = DailyLog(
       questions: dailyLog.questions,
       selectedQuestion: selectedQuestion,
       questionStatus: dailyLog.questionStatus,
-      createdDate: dailyLog.createdDate,
       availableQuestionSwaps: availableQuestionSwaps,
     );
 

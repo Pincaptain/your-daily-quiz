@@ -1,5 +1,5 @@
-import 'package:equatable/equatable.dart';
-import 'package:your_daily_quiz/model/daily_log.dart';
+import "package:equatable/equatable.dart";
+import "package:your_daily_quiz/model/daily_log.dart";
 
 abstract class QuizState extends Equatable {
   const QuizState();

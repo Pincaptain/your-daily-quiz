@@ -1,11 +1,11 @@
-import 'package:badges/badges.dart' as badges;
-import 'package:flutter/material.dart';
-import 'package:flutter_bloc/flutter_bloc.dart';
-import 'package:your_daily_quiz/bloc/quiz_bloc.dart';
-import 'package:your_daily_quiz/bloc/quiz_event.dart';
-import 'package:your_daily_quiz/bloc/quiz_state.dart';
-import 'package:your_daily_quiz/model/daily_log.dart';
-import 'package:your_daily_quiz/utils/snack_bar_utils.dart';
+import "package:badges/badges.dart" as badges;
+import "package:flutter/material.dart";
+import "package:flutter_bloc/flutter_bloc.dart";
+import "package:your_daily_quiz/bloc/quiz_bloc.dart";
+import "package:your_daily_quiz/bloc/quiz_event.dart";
+import "package:your_daily_quiz/bloc/quiz_state.dart";
+import "package:your_daily_quiz/model/daily_log.dart";
+import "package:your_daily_quiz/utils/snack_bar_utils.dart";
 
 class SwapQuestionWidget extends StatelessWidget {
   const SwapQuestionWidget({super.key});

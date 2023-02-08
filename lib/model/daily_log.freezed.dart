@@ -27,8 +27,6 @@ mixin _$DailyLog {
   @HiveField(2)
   QuestionStatus get questionStatus => throw _privateConstructorUsedError;
   @HiveField(3)
-  DateTime get createdDate => throw _privateConstructorUsedError;
-  @HiveField(4)
   int get availableQuestionSwaps => throw _privateConstructorUsedError;
 
   Map<String, dynamic> toJson() => throw _privateConstructorUsedError;
@@ -46,8 +44,7 @@ abstract class $DailyLogCopyWith<$Res> {
       {@HiveField(0) List<Question> questions,
       @HiveField(1) Question selectedQuestion,
       @HiveField(2) QuestionStatus questionStatus,
-      @HiveField(3) DateTime createdDate,
-      @HiveField(4) int availableQuestionSwaps});
+      @HiveField(3) int availableQuestionSwaps});
 
   $QuestionCopyWith<$Res> get selectedQuestion;
 }
@@ -68,7 +65,6 @@ class _$DailyLogCopyWithImpl<$Res, $Val extends DailyLog>
     Object? questions = null,
     Object? selectedQuestion = null,
     Object? questionStatus = null,
-    Object? createdDate = null,
     Object? availableQuestionSwaps = null,
   }) {
     return _then(_value.copyWith(
@@ -84,10 +80,6 @@ class _$DailyLogCopyWithImpl<$Res, $Val extends DailyLog>
           ? _value.questionStatus
           : questionStatus // ignore: cast_nullable_to_non_nullable
               as QuestionStatus,
-      createdDate: null == createdDate
-          ? _value.createdDate
-          : createdDate // ignore: cast_nullable_to_non_nullable
-              as DateTime,
       availableQuestionSwaps: null == availableQuestionSwaps
           ? _value.availableQuestionSwaps
           : availableQuestionSwaps // ignore: cast_nullable_to_non_nullable
@@ -115,8 +107,7 @@ abstract class _$$_DailyLogCopyWith<$Res> implements $DailyLogCopyWith<$Res> {
       {@HiveField(0) List<Question> questions,
       @HiveField(1) Question selectedQuestion,
       @HiveField(2) QuestionStatus questionStatus,
-      @HiveField(3) DateTime createdDate,
-      @HiveField(4) int availableQuestionSwaps});
+      @HiveField(3) int availableQuestionSwaps});
 
   @override
   $QuestionCopyWith<$Res> get selectedQuestion;
@@ -136,7 +127,6 @@ class __$$_DailyLogCopyWithImpl<$Res>
     Object? questions = null,
     Object? selectedQuestion = null,
     Object? questionStatus = null,
-    Object? createdDate = null,
     Object? availableQuestionSwaps = null,
   }) {
     return _then(_$_DailyLog(
@@ -152,10 +142,6 @@ class __$$_DailyLogCopyWithImpl<$Res>
           ? _value.questionStatus
           : questionStatus // ignore: cast_nullable_to_non_nullable
               as QuestionStatus,
-      createdDate: null == createdDate
-          ? _value.createdDate
-          : createdDate // ignore: cast_nullable_to_non_nullable
-              as DateTime,
       availableQuestionSwaps: null == availableQuestionSwaps
           ? _value.availableQuestionSwaps
           : availableQuestionSwaps // ignore: cast_nullable_to_non_nullable
@@ -172,8 +158,7 @@ class _$_DailyLog extends _DailyLog {
       {@HiveField(0) required final List<Question> questions,
       @HiveField(1) required this.selectedQuestion,
       @HiveField(2) required this.questionStatus,
-      @HiveField(3) required this.createdDate,
-      @HiveField(4) required this.availableQuestionSwaps})
+      @HiveField(3) required this.availableQuestionSwaps})
       : _questions = questions,
         super._();
 
@@ -197,14 +182,11 @@ class _$_DailyLog extends _DailyLog {
   final QuestionStatus questionStatus;
   @override
   @HiveField(3)
-  final DateTime createdDate;
-  @override
-  @HiveField(4)
   final int availableQuestionSwaps;
 
   @override
   String toString() {
-    return 'DailyLog(questions: $questions, selectedQuestion: $selectedQuestion, questionStatus: $questionStatus, createdDate: $createdDate, availableQuestionSwaps: $availableQuestionSwaps)';
+    return 'DailyLog(questions: $questions, selectedQuestion: $selectedQuestion, questionStatus: $questionStatus, availableQuestionSwaps: $availableQuestionSwaps)';
   }
 
   @override
@@ -218,8 +200,6 @@ class _$_DailyLog extends _DailyLog {
                 other.selectedQuestion == selectedQuestion) &&
             (identical(other.questionStatus, questionStatus) ||
                 other.questionStatus == questionStatus) &&
-            (identical(other.createdDate, createdDate) ||
-                other.createdDate == createdDate) &&
             (identical(other.availableQuestionSwaps, availableQuestionSwaps) ||
                 other.availableQuestionSwaps == availableQuestionSwaps));
   }
@@ -231,7 +211,6 @@ class _$_DailyLog extends _DailyLog {
       const DeepCollectionEquality().hash(_questions),
       selectedQuestion,
       questionStatus,
-      createdDate,
       availableQuestionSwaps);
 
   @JsonKey(ignore: true)
@@ -253,8 +232,7 @@ abstract class _DailyLog extends DailyLog {
       {@HiveField(0) required final List<Question> questions,
       @HiveField(1) required final Question selectedQuestion,
       @HiveField(2) required final QuestionStatus questionStatus,
-      @HiveField(3) required final DateTime createdDate,
-      @HiveField(4) required final int availableQuestionSwaps}) = _$_DailyLog;
+      @HiveField(3) required final int availableQuestionSwaps}) = _$_DailyLog;
   _DailyLog._() : super._();
 
   factory _DailyLog.fromJson(Map<String, dynamic> json) = _$_DailyLog.fromJson;
@@ -270,9 +248,6 @@ abstract class _DailyLog extends DailyLog {
   QuestionStatus get questionStatus;
   @override
   @HiveField(3)
-  DateTime get createdDate;
-  @override
-  @HiveField(4)
   int get availableQuestionSwaps;
   @override
   @JsonKey(ignore: true)

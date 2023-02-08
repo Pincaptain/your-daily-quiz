@@ -20,22 +20,19 @@ class DailyLogAdapter extends TypeAdapter<_$_DailyLog> {
       questions: (fields[0] as List).cast<Question>(),
       selectedQuestion: fields[1] as Question,
       questionStatus: fields[2] as QuestionStatus,
-      createdDate: fields[3] as DateTime,
-      availableQuestionSwaps: fields[4] as int,
+      availableQuestionSwaps: fields[3] as int,
     );
   }
 
   @override
   void write(BinaryWriter writer, _$_DailyLog obj) {
     writer
-      ..writeByte(5)
+      ..writeByte(4)
       ..writeByte(1)
       ..write(obj.selectedQuestion)
       ..writeByte(2)
       ..write(obj.questionStatus)
       ..writeByte(3)
-      ..write(obj.createdDate)
-      ..writeByte(4)
       ..write(obj.availableQuestionSwaps)
       ..writeByte(0)
       ..write(obj.questions);
@@ -64,7 +61,6 @@ _$_DailyLog _$$_DailyLogFromJson(Map<String, dynamic> json) => _$_DailyLog(
           Question.fromJson(json['selectedQuestion'] as Map<String, dynamic>),
       questionStatus:
           $enumDecode(_$QuestionStatusEnumMap, json['questionStatus']),
-      createdDate: DateTime.parse(json['createdDate'] as String),
       availableQuestionSwaps: json['availableQuestionSwaps'] as int,
     );
 
@@ -73,7 +69,6 @@ Map<String, dynamic> _$$_DailyLogToJson(_$_DailyLog instance) =>
       'questions': instance.questions.map((e) => e.toJson()).toList(),
       'selectedQuestion': instance.selectedQuestion.toJson(),
       'questionStatus': _$QuestionStatusEnumMap[instance.questionStatus]!,
-      'createdDate': instance.createdDate.toIso8601String(),
       'availableQuestionSwaps': instance.availableQuestionSwaps,
     };
 

@@ -1,8 +1,8 @@
-import 'package:injectable/injectable.dart';
-import 'package:your_daily_quiz/model/daily_log.dart';
-import 'package:your_daily_quiz/model/question.dart';
-import 'package:your_daily_quiz/service/daily_log_service.dart';
-import 'package:your_daily_quiz/service/question_service.dart';
+import "package:injectable/injectable.dart";
+import "package:your_daily_quiz/model/daily_log.dart";
+import "package:your_daily_quiz/model/question.dart";
+import "package:your_daily_quiz/service/daily_log_service.dart";
+import "package:your_daily_quiz/service/question_service.dart";
 
 @injectable
 class QuizService {

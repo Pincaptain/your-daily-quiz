@@ -1,9 +1,9 @@
-import 'package:flutter/material.dart';
-import 'package:your_daily_quiz/model/question.dart';
-import 'package:your_daily_quiz/utils/answer_utils.dart';
-import 'package:your_daily_quiz/utils/question_utils.dart';
-import 'package:your_daily_quiz/widget/answer_widget.dart';
-import 'package:your_daily_quiz/widget/tag_widget.dart';
+import "package:flutter/material.dart";
+import "package:your_daily_quiz/model/question.dart";
+import "package:your_daily_quiz/utils/answer_utils.dart";
+import "package:your_daily_quiz/utils/question_utils.dart";
+import "package:your_daily_quiz/widget/answer_widget.dart";
+import "package:your_daily_quiz/widget/tag_widget.dart";
 
 class QuestionWidget extends StatelessWidget {
   final Question question;

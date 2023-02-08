@@ -467,14 +467,14 @@ packages:
       url: "https://pub.dev"
     source: hosted
     version: "1.0.4"
-  mockito:
+  mocktail:
     dependency: "direct dev"
     description:
-      name: mockito
-      sha256: "2a8a17b82b1bde04d514e75d90d634a0ac23f6cb4991f6098009dd56836aeafe"
+      name: mocktail
+      sha256: "80a996cd9a69284b3dc521ce185ffe9150cde69767c2d3a0720147d93c0cef53"
       url: "https://pub.dev"
     source: hosted
-    version: "5.3.2"
+    version: "0.3.0"
   nested:
     dependency: transitive
     description:

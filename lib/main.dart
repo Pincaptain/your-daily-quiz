@@ -1,6 +1,6 @@
-import 'package:flutter/material.dart';
-import 'package:your_daily_quiz/injection.dart';
-import 'package:your_daily_quiz/page/quiz_page.dart';
+import "package:flutter/material.dart";
+import "package:your_daily_quiz/injection.dart";
+import "package:your_daily_quiz/page/quiz_page.dart";
 
 void main() async {
   await configureDependencies();
@@ -13,7 +13,7 @@ class YourDailyQuizApp extends StatelessWidget {
   @override
   Widget build(BuildContext context) {
     return MaterialApp(
-      title: 'Your Daily Quiz',
+      title: "Your Daily Quiz",
       theme: ThemeData.light(useMaterial3: true),
       darkTheme: ThemeData.dark(useMaterial3: true),
       debugShowCheckedModeBanner: false,

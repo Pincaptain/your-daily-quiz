@@ -1,7 +1,7 @@
-import 'package:hive/hive.dart';
-import 'package:injectable/injectable.dart';
-import 'package:your_daily_quiz/constants.dart';
-import 'package:your_daily_quiz/model/daily_log.dart';
+import "package:hive/hive.dart";
+import "package:injectable/injectable.dart";
+import "package:your_daily_quiz/constants.dart";
+import "package:your_daily_quiz/model/daily_log.dart";
 
 @injectable
 class DailyLogRepository {

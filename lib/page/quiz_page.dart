@@ -1,13 +1,13 @@
-import 'package:flutter/material.dart';
-import 'package:flutter_bloc/flutter_bloc.dart';
-import 'package:pull_to_refresh/pull_to_refresh.dart';
-import 'package:your_daily_quiz/bloc/quiz_bloc.dart';
-import 'package:your_daily_quiz/bloc/quiz_event.dart';
-import 'package:your_daily_quiz/bloc/quiz_state.dart';
-import 'package:your_daily_quiz/injection.dart';
-import 'package:your_daily_quiz/service/quiz_service.dart';
-import 'package:your_daily_quiz/widget/question_widget.dart';
-import 'package:your_daily_quiz/widget/swap_question_widget.dart';
+import "package:flutter/material.dart";
+import "package:flutter_bloc/flutter_bloc.dart";
+import "package:pull_to_refresh/pull_to_refresh.dart";
+import "package:your_daily_quiz/bloc/quiz_bloc.dart";
+import "package:your_daily_quiz/bloc/quiz_event.dart";
+import "package:your_daily_quiz/bloc/quiz_state.dart";
+import "package:your_daily_quiz/injection.dart";
+import "package:your_daily_quiz/service/quiz_service.dart";
+import "package:your_daily_quiz/widget/question_widget.dart";
+import "package:your_daily_quiz/widget/swap_question_widget.dart";
 
 class QuizPage extends StatelessWidget {
   final RefreshController _refreshController = RefreshController(initialRefresh: true);

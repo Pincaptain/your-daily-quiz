@@ -1,4 +1,4 @@
-import 'package:equatable/equatable.dart';
+import "package:equatable/equatable.dart";
 
 abstract class QuizEvent extends Equatable {
   const QuizEvent();

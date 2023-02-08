@@ -1,8 +1,8 @@
-import 'package:freezed_annotation/freezed_annotation.dart';
-import 'package:hive/hive.dart';
+import "package:freezed_annotation/freezed_annotation.dart";
+import "package:hive/hive.dart";
 
-part 'question.freezed.dart';
-part 'question.g.dart';
+part "question.freezed.dart";
+part "question.g.dart";
 
 @freezed
 class Question extends HiveObject with _$Question {
@@ -22,5 +22,5 @@ class Question extends HiveObject with _$Question {
     @HiveField(9) required final bool isNiche,
   }) = _Question;
 
-  factory Question.fromJson(Map<String, Object?> json) => _$QuestionFromJson(json);
+  factory Question.fromJson(final Map<String, Object?> json) => _$QuestionFromJson(json);
 }
