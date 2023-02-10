@@ -12,17 +12,21 @@ class QuizService {
   QuizService(this._dailyLogService, this._questionService);
 
   Future<DailyLog> getDailyLog() async {
-    final DailyLog? dailyLog = await _dailyLogService.getDailyLog();
+    final bool isDailyLogCreated = await _dailyLogService.isDailyLogCreated();
 
-    if (dailyLog != null) {
-      return dailyLog;
+    if (isDailyLogCreated) {
+      return await _dailyLogService.getDailyLog();
     }
 
     final List<Question> questions = await _questionService.getQuestions();
-    return await _dailyLogService.createDailyLog(questions);
+    return _dailyLogService.createDailyLog(questions);
   }
 
   Future<DailyLog> swapQuestion() async {
     return _dailyLogService.swapQuestion();
+  }
+
+  Future<DailyLog> answerQuestion(final String answer) async {
+    return _dailyLogService.answerQuestion(answer);
   }
 }

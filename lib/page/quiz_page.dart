@@ -33,21 +33,31 @@ class QuizPage extends StatelessWidget {
           controller: _refreshController,
           onRefresh: _onRefresh,
           onLoading: _onLoading,
-          child: BlocBuilder<QuizBloc, QuizState>(
-            builder: (final BuildContext context, final QuizState state) {
-              if (state is LoadedQuizState) {
-                return QuestionWidget(question: state.dailyLog.selectedQuestion);
-              }
-              return const Center(
-                child: SizedBox(
-                  height: 64,
-                  width: 64,
-                  child: CircularProgressIndicator(
-                    strokeWidth: 8,
+          child: Card(
+            elevation: 4.0,
+            margin: const EdgeInsets.symmetric(horizontal: 0),
+            shape: const RoundedRectangleBorder(
+              borderRadius: BorderRadius.only(
+                topLeft: Radius.circular(18),
+                topRight: Radius.circular(18),
+              ),
+            ),
+            child: BlocBuilder<QuizBloc, QuizState>(
+              builder: (final BuildContext context, final QuizState state) {
+                if (state is LoadedQuizState) {
+                  return QuestionWidget(question: state.dailyLog.selectedQuestion);
+                }
+                return const Center(
+                  child: SizedBox(
+                    height: 64,
+                    width: 64,
+                    child: CircularProgressIndicator(
+                      strokeWidth: 8,
+                    ),
                   ),
-                ),
-              );
-            },
+                );
+              },
+            ),
           ),
         ),
         floatingActionButton: const SwapQuestionWidget(),

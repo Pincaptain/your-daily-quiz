@@ -18,11 +18,16 @@ class DailyLogRepository {
 
   Future<DailyLog?> getDailyLog() async {
     final CollectionBox<DailyLog> box = await _getBox();
-    return await box.get(_getDailyLogKey());
+    return box.get(_getDailyLogKey());
+  }
+
+  Future<bool> isDailyLogCreated() async {
+    final CollectionBox<DailyLog> box = await _getBox();
+    return (await box.get(_getDailyLogKey())) != null;
   }
 
   Future<CollectionBox<DailyLog>> _getBox() async {
-    return await _boxCollection.openBox<DailyLog>(dailyLogBoxName);
+    return _boxCollection.openBox<DailyLog>(dailyLogBoxName);
   }
 
   String _getDailyLogKey() {

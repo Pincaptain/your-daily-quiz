@@ -10,3 +10,12 @@ abstract class QuizEvent extends Equatable {
 class GetDailyLogEvent extends QuizEvent {}
 
 class SwapQuestionEvent extends QuizEvent {}
+
+class AnswerQuestionEvent extends QuizEvent {
+  final String answer;
+
+  const AnswerQuestionEvent({required this.answer});
+
+  @override
+  List<Object?> get props => [answer];
+}

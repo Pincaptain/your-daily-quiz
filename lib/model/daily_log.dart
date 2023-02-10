@@ -18,5 +18,9 @@ class DailyLog extends HiveObject with _$DailyLog {
     @HiveField(3) required final int availableQuestionSwaps,
   }) = _DailyLog;
 
+  bool isAnswered() {
+    return questionStatus != QuestionStatus.unanswered;
+  }
+
   factory DailyLog.fromJson(final Map<String, Object?> json) => _$DailyLogFromJson(json);
 }
