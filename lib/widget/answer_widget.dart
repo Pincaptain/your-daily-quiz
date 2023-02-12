@@ -53,12 +53,18 @@ class AnswerWidget extends StatelessWidget {
 
   ButtonStyle _buildButtonStyle(final BuildContext context, final QuizState state) {
     if (state is LoadedQuizState) {
-      final DailyLog dailyLog = state.dailyLog;
-      final String correctAnswer = dailyLog.selectedQuestion.correctAnswer;
-      if (answer == correctAnswer) {
-        return const ButtonStyle(
-          backgroundColor: MaterialStatePropertyAll(Colors.green),
-        );
+      if (state.dailyLog.isAnswered()) {
+        final DailyLog dailyLog = state.dailyLog;
+        final String correctAnswer = dailyLog.selectedQuestion.correctAnswer;
+        if (answer == correctAnswer) {
+          return const ButtonStyle(
+            backgroundColor: MaterialStatePropertyAll(Colors.green),
+          );
+        } else if (answer == dailyLog.selectedAnswer) {
+          return const ButtonStyle(
+            backgroundColor: MaterialStatePropertyAll(Colors.orangeAccent),
+          );
+        }
       }
     }
 

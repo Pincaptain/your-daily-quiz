@@ -45,6 +45,7 @@ class DailyLogService {
       selectedQuestion: selectedQuestion,
       questionStatus: questionStatus,
       availableQuestionSwaps: dailyLog.availableQuestionSwaps,
+      selectedAnswer: answer,
     );
 
     return _dailyLogRepository.saveDailyLog(updatedDailyLog);

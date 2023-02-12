@@ -16,6 +16,7 @@ class DailyLog extends HiveObject with _$DailyLog {
     @HiveField(1) required final Question selectedQuestion,
     @HiveField(2) required final QuestionStatus questionStatus,
     @HiveField(3) required final int availableQuestionSwaps,
+    @HiveField(4) final String? selectedAnswer,
   }) = _DailyLog;
 
   bool isAnswered() {

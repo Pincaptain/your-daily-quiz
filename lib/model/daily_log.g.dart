@@ -21,19 +21,22 @@ class DailyLogAdapter extends TypeAdapter<_$_DailyLog> {
       selectedQuestion: fields[1] as Question,
       questionStatus: fields[2] as QuestionStatus,
       availableQuestionSwaps: fields[3] as int,
+      selectedAnswer: fields[4] as String?,
     );
   }
 
   @override
   void write(BinaryWriter writer, _$_DailyLog obj) {
     writer
-      ..writeByte(4)
+      ..writeByte(5)
       ..writeByte(1)
       ..write(obj.selectedQuestion)
       ..writeByte(2)
       ..write(obj.questionStatus)
       ..writeByte(3)
       ..write(obj.availableQuestionSwaps)
+      ..writeByte(4)
+      ..write(obj.selectedAnswer)
       ..writeByte(0)
       ..write(obj.questions);
   }
@@ -62,6 +65,7 @@ _$_DailyLog _$$_DailyLogFromJson(Map<String, dynamic> json) => _$_DailyLog(
       questionStatus:
           $enumDecode(_$QuestionStatusEnumMap, json['questionStatus']),
       availableQuestionSwaps: json['availableQuestionSwaps'] as int,
+      selectedAnswer: json['selectedAnswer'] as String?,
     );
 
 Map<String, dynamic> _$$_DailyLogToJson(_$_DailyLog instance) =>
@@ -70,6 +74,7 @@ Map<String, dynamic> _$$_DailyLogToJson(_$_DailyLog instance) =>
       'selectedQuestion': instance.selectedQuestion.toJson(),
       'questionStatus': _$QuestionStatusEnumMap[instance.questionStatus]!,
       'availableQuestionSwaps': instance.availableQuestionSwaps,
+      'selectedAnswer': instance.selectedAnswer,
     };
 
 const _$QuestionStatusEnumMap = {
